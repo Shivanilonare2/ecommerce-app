@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/views/constant_widget/common_password_textfield.dart';
 import 'package:ecommerce_app/views/constant_widget/common_textfield.dart';
+import 'package:ecommerce_app/views/login_signup_views/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +68,7 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(
                   width: MediaQuery.sizeOf(context).width,
-                  height: MediaQuery.sizeOf(context).height * 0.05,
+                  height: MediaQuery.sizeOf(context).height * 0.06,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xffeb3461),
@@ -91,7 +92,13 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(color: Colors.black87, fontSize: 14),
                   ),
                   InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const SignUpScreen()));
+                      },
                       child: const Text(
                         " Register Now",
                         style: TextStyle(
