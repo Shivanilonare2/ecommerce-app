@@ -1,5 +1,7 @@
+import 'package:ecommerce_app/utils/constant_colors.dart';
 import 'package:ecommerce_app/views/constant_widget/common_password_textfield.dart';
 import 'package:ecommerce_app/views/constant_widget/common_textfield.dart';
+import 'package:ecommerce_app/views/home_screens/home_page.dart';
 import 'package:ecommerce_app/views/login_signup_views/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -73,7 +75,13 @@ class LoginPage extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xffeb3461),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                 HomePage()));
+                      },
                       child: const Text(
                         "Login",
                         style: TextStyle(
@@ -115,11 +123,15 @@ class LoginPage extends StatelessWidget {
                 "- OR -",
                 style: TextStyle(color: Colors.black87, fontSize: 14),
               ),
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.015,
+              ),
               FloatingActionButton(
+                backgroundColor: AppColors.kPrimaryColor,
                 onPressed: () {},
-                child: Image.asset("assets/google_logo.png",
-                    height: MediaQuery.sizeOf(context).height * 0.02,
-                    width: MediaQuery.sizeOf(context).width * 0.02),
+                child: Image.asset("assets/google.png",
+                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    width: MediaQuery.sizeOf(context).width * 0.05),
               )
             ],
           ),
